@@ -45,7 +45,7 @@ app.use("/api/users",users);
 
 
    
-const port = process.env.Port || 5000;   
+var port = process.env.Port || 5000;   
 
 app.listen(port,()=>console.log(`Server started on Port ${port}`));
 
