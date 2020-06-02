@@ -22,7 +22,7 @@ export const registerUser = (userData, history) => dispatch => {
        dispatch({
 
           type: GET_ERRORS,
-           payload: err.response.userData
+           payload: err.response.data
        })
    
     )
