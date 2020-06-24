@@ -4,8 +4,8 @@ import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import {setCurrentUser, logoutUser} from "./actions/authActions"
 
-import Navbar from './components/navbar.js';
-import Landing from './components/landingpage.js';
+
+import Home from './components/homepage.js';
 import Register from './components/auth/register.js';
 import Login from './components/auth/login.js';
 
@@ -14,6 +14,8 @@ import store from './store.js';
 import PrivateRoute from "./components/private-route/privateRouter";
 import Dashboard from "./components/dashboard/dashboard.js"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import CollapseNav from './components/nav.js';
+
 
 if(localStorage.jwtToken) {
   setAuthToken(localStorage.jwtToken);
@@ -37,13 +39,16 @@ class App extends React.Component {
         <Provider store={store}>
         <Router>
           <div className="App">
-            <Navbar />
-            <Route exact path="/" component={Landing} />
+          <CollapseNav/>
+        
+            <Route exact path="/" component={Home} />
             
 
             <div className="container">
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
+           
+
             
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
