@@ -29,7 +29,7 @@ class Home extends Component {
             <div className="col-md-6" style={{paddingTop: '200px',
                   }}>
               <Link
-                to="/Women"
+                to="/women"
                 style={{
                   width: "140px",
                   borderRadius: "3px",
@@ -44,7 +44,7 @@ class Home extends Component {
             <div className="col-md-6" style={{paddingTop: '200px',
                   }}>
               <Link
-                to="/Men"
+                to="/men"
                 style={{
                   width: "140px",
                   borderRadius: "6px",

@@ -3,7 +3,7 @@ import { Carousel, CarouselItem, Col, Row,CarouselControl } from 'reactstrap'
 import Firstslide from './img/Firstslide.jpg'
 import Secondslide from './img/Secondslide.jpg'
 import Thirdslide from './img/Thirdslide.jpg'
-import './styles.css'
+
 import ButtonInternalLink from './buttonInternalLink'
 
 

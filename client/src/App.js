@@ -15,6 +15,12 @@ import PrivateRoute from "./components/private-route/privateRouter";
 import Dashboard from "./components/dashboard/dashboard.js"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CollapseNav from './components/nav.js';
+//import Cart from './components/cart/cart.js';
+import WomanPage from './components/womanPage.js'
+import ManPage from './components/manPage.js'
+import Details from './components/details.js'
+import Cart from './components/cart/cart.js'
+
 
 
 if(localStorage.jwtToken) {
@@ -42,12 +48,17 @@ class App extends React.Component {
           <CollapseNav/>
         
             <Route exact path="/" component={Home} />
+            <Route exact path="/women" component={WomanPage} />
+            <Route exact path="/men" component={ManPage} />
             
 
             <div className="container">
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
-           
+            <Route exact path="/details" component={Details} />
+            <Route exact path="/cart" component={Cart} />
+            
+            
 
             
             <Switch>

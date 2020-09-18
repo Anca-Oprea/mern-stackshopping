@@ -15,10 +15,10 @@ const CollapseNav = (props) => {
         <Collapse color="blue" isOpen={!collapsed} navbar>
           <Nav navbar>
             <NavItem>
-              <NavLink href="/Woman">Woman</NavLink>
+              <NavLink href="/women">Women</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/Man">Man</NavLink>
+              <NavLink href="/men">Men</NavLink>
             </NavItem>
           
           </Nav>
