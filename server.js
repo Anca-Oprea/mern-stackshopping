@@ -33,6 +33,7 @@ require("./config/passport.js")(passport);
 app.use("/api/users", users);
 
 
+
 // app.set('port', (5000 || process.env.PORT ));
 
 //For avoidong Heroku $PORT error
@@ -43,8 +44,5 @@ app.use("/api/users", users);
 //     console.log('App is running, server is listening on port ', app.get('port'));
 // });
 
-// const port = process.env.Port || 5000;
-
-
-
-app.listen(process.env.Port || 5000, () => console.log(`Server started on Port ` + process.env.Port));
+const port = process.env.Port || 5000;
+app.listen(port, () => console.log(`Server started on Port ${port}`));
