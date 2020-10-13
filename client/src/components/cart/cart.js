@@ -3,7 +3,7 @@ import cartColumn from './cartColumns.js';
 import cartList from './cartList.js';
 import emptyCart from './emptyCart.js';
 import cartTotal from './cartTotal.js';
-import {ProductConsumer} from './'
+import {ProductConsumer} from '../../context.js'
 
 export default class Cart extends Component {
     render() {
