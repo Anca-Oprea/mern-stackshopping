@@ -1,16 +1,9 @@
 const express = require ('express');
-
 const mongoose = require ('mongoose');
 const bodyParser = require ('body-parser');
 const passport = require("passport");
-
-
 const users = require("./routes/api/users.js");
-
 const app = express();
-
-
-
 
 //Bodyparser Middleware
 app.use(bodyParser.urlencoded({
@@ -26,16 +19,12 @@ mongoose
     .connect(db,
         { useNewUrlParser: true,
         useUnifiedTopology: true 
-            
-         
         } )
-    .then(()=> console.log('MongoDb connected...'))
+    .then( () => console.log('MongoDb connected...'))
     .catch(err => console.log(err));
 
     //Passport middleware
-
 app.use(passport.initialize());
-
 
 //Passport config
 require("./config/passport.js")(passport);
@@ -43,12 +32,5 @@ require("./config/passport.js")(passport);
 //Routes
 app.use("/api/users",users);
 
-
-   
-const port = process.env.Port || 5000;   
-
-
-app.listen(port,()=>console.log(`Server started on Port ${port}`));
-
-       
-    
+const port = process.env.Port || 55101;   
+app.listen(port, () => console.log(`Server started on Port ${port}`));
