@@ -30,7 +30,7 @@ app.use(passport.initialize());
 require("./config/passport.js")(passport);
 
 //Routes
-app.use("/api/users",users);
+app.use("/api/users", users);
 
-const port = process.env.Port || 55101;   
+const port = 5101 || process.env.Port;   
 app.listen(port, () => console.log(`Server started on Port ${port}`));
