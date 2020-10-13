@@ -37,12 +37,12 @@ app.use("/api/users", users);
 app.set('port', (5000 || process.env.PORT ));
 
 //For avoidong Heroku $PORT error
-app.get('/', function(request, response) {
-    var result = 'App is running'
-    response.send(result);
-}).listen(app.get('port'), function() {
-    console.log('App is running, server is listening on port ', app.get('port'));
-});
+// app.get('/', function(request, response) {
+//     var result = 'App is running'
+//     response.send(result);
+// }).listen(app.get('port'), function() {
+//     console.log('App is running, server is listening on port ', app.get('port'));
+// });
 
-// const port = 5101 || process.env.Port;
-// app.listen(port, () => console.log(`Server started on Port ${port}`));
+const port = process.env.Port || 5000;
+app.listen(port, () => console.log(`Server started on Port ${port}`));
