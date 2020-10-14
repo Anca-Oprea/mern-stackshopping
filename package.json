@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "onlineshopmern",
   "main": "server.js",
   "dependencies": {
     "axios": "^0.20.0",
@@ -25,25 +25,21 @@
     "react-router": "^3.2.6",
     "react-scripts": "^3.4.3",
     "styled-components": "^5.1.1",
-    "validator": "^13.0.0"
+    "validator": "^13.0.0",
+    "concurrently": "^5.3.0",
+    "http-server": "^0.12.3"
   },
   "scripts": {
-    "client-install": "npm run install --prefix client",
+    "client-install": "npm install --prefix client",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\"  \" npm run client\"",
-    "heroku-prebuild": "NPM_CONFIG_PRODUCTION=false npm run install --prefix client",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
-  "keywords": [],
   "author": "Oprea Anca",
   "license": "ISC",
-  "engines": {
-    "node": "12.16.1",
-    "npm": "6.13.4"
-  },
   "devDependencies": {
     "concurrently": "^5.3.0",
     "http-server": "^0.12.3"
