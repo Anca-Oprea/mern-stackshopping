@@ -9,10 +9,10 @@ const CollapseNav = (props) => {
 
   return (
     <div>
-      <Navbar color="dark" light>
-        <NavbarBrand color="blue" href="/" className="mr-auto">Home</NavbarBrand>
+      <Navbar color='dark' light>
+        <NavbarBrand color="white" href="/" className="mr-auto">Home</NavbarBrand>
         <NavbarToggler onClick={toggleNavbar} className="mr-2" />
-        <Collapse color="blue" isOpen={!collapsed} navbar>
+        <Collapse color="dark" isOpen={!collapsed} navbar>
           <Nav navbar>
             <NavItem>
               <NavLink href="/women">Women</NavLink>
