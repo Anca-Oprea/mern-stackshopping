@@ -34,7 +34,7 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\"  \" npm run client\"",
-    "heroku-prebuild": "NPM_CONFIG_PRODUCTION=true npm install -f --prefix client && npm audit fix --prefix client",
+    "heroku-prebuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm audit fix --prefix client",
     "heroku-build": "npm run build --prefix client"
   },
   "author": "Oprea Anca",
