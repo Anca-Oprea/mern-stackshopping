@@ -43,7 +43,6 @@ if (process.env.NODE_ENV === 'production') {
 	});
 
     // app.use(express.static(path.join(__dirname, './client/build')));
-
 }
 
 const port = process.env.Port || 5000;
