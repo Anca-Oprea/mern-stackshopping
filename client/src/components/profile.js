@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import jwt_decode from 'jwt-decode'
-import {getProfile} from './userFunctions'
+import { getProfile } from './userFunctions'
 
 
 class Profile extends Component {
@@ -11,21 +11,18 @@ class Profile extends Component {
             lastName: '',
             email: '',
             errors: {}
-          
         }
     }
 
     componentDidMount() {
         const token = localStorage.usertoken
         const decoded = jwt_decode(token)
-        getProfile(token).then(res=>{
-            
+        getProfile(token).then(res => {
             this.setState({
                 firstName: res.firstName,
                 lastName: res.lastName,
                 email: res.email
-        })
-        
+            })
         })
     }
 

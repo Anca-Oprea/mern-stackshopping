@@ -3,12 +3,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions"
-
-
 import Home from './components/homepage.js';
 import Register from './components/auth/register.js';
 import Login from './components/auth/login.js';
-
 import { Provider } from "react-redux";
 import store from './store.js';
 import PrivateRoute from "./components/private-route/privateRouter";
@@ -40,7 +37,7 @@ class App extends React.Component {
         <Router>
           <div className="App">
             <CollapseNav />
-            <Route exact path="/" component={Home} />
+            <Route exact path="/start" component={Home} />
             <Route exact path="/women" component={WomanPage} />
             <Route exact path="/men" component={ManPage} />
             <div className="container">

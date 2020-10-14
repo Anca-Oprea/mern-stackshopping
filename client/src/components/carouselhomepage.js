@@ -22,7 +22,6 @@ const items = [
     btn: {
       content: 'Go to the collection',
       link: '/Men',
-
     }
   },
   {

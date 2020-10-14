@@ -34,13 +34,14 @@ app.use("/api/users", users);
 
 // app.set('port', (5000 || process.env.PORT ));
 
-//For avoidong Heroku $PORT error
-// app.get('/', function(request, response) {
-//     var result = 'App is running'
-//     response.send(result);
-// }).listen(app.get('port'), function() {
-//     console.log('App is running, server is listening on port ', app.get('port'));
-// });
+//Sere static assets if in production
+if (process.env.NODE_ENV === 'production') {
+	//Set static folder
+	app.use(express.static('client/build'));
+	app.get('*', (req, res) => {
+		res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+	});
+}
 
 const port = process.env.Port || 5000;
 app.listen(port, () => console.log(`Server started on Port ${port}`));
