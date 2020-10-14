@@ -1,56 +1,52 @@
-import React , {Component} from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
-import {connect} from "react-redux";
-import {logoutUser} from "../../actions/authActions";
-
+import { connect } from "react-redux";
+import { logoutUser } from "../../actions/authActions";
 
 class Dashboard extends Component {
-    onLogoutClick = e =>{
+    onLogoutClick = e => {
         e.preventDefault();
         this.props.logoutUser();
     }
-    render(){
-        const {user} =this.props.auth;
-        
-        return(
-            <div style={{height:"75vh"}} className="container valign-wrapper">
+    render() {
+        const { user } = this.props.auth;
+
+        return (
+            <div style={{ height: "75vh" }} className="container valign-wrapper">
                 <div className="row">
                     <div div className="col s12 center-align">
                         <h4>
                             <b>Hey there,</b>{user.firstName.split(" ")[0]}
-                            <p className ="flow-text  grey-text text-darken-1">
+                            <p className="flow-text  grey-text text-darken-1">
                                 You are logged.{" "}
-                                </p>
+                            </p>
                         </h4>
                         <button style={{
-                            width:"150px",
-                            borderRadius:"3px",
+                            width: "150px",
+                            borderRadius: "3px",
                             letterSpacing: "1.5px",
                             marginTop: "1rem"
-                            }}
+                        }}
                             onClick={this.onLogoutClick}
                             className="btn btn-primary">
-                                Log Out
-                                
+                            Log Out
                             </button>
                     </div>
                 </div>
             </div>
         )
-
     }
 }
 
-
-Dashboard.propTypes ={
+Dashboard.propTypes = {
     logoutUser: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired
 }
 
 const mapStateToProps = state => ({
-     auth: state.auth
+    auth: state.auth
 })
 
 export default connect(
-    mapStateToProps, {logoutUser}
+    mapStateToProps, { logoutUser }
 )(Dashboard);

@@ -37,7 +37,7 @@ class App extends React.Component {
         <Router>
           <div className="App">
             <CollapseNav />
-            <Route exact path="/start" component={Home} />
+            <Route exact path="/" component={Home} />
             <Route exact path="/women" component={WomanPage} />
             <Route exact path="/men" component={ManPage} />
             <div className="container">

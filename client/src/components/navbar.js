@@ -5,7 +5,7 @@ class Navi extends Component {
 	logOut(e) {
 		e.preventDefault()
 		localStorage.removeItem('usertoken')
-		this.props.history.push(`/start`)
+		this.props.history.push(`/`)
 	}
 	render() {
 		const loginRegLink = (
@@ -14,7 +14,6 @@ class Navi extends Component {
 					<Link to="/register" className="nav-link">Register
 					</Link>
 				</li>
-
 				<li className="nav-item">
 					<Link to="/login" className="nav-link">Login
 	               </Link>
