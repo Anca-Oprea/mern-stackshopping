@@ -1,8 +1,7 @@
 
-import React, { Component ,Container,url} from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import CarouselHomePage from "./carouselhomepage.js"
-import Secondslide from './img/Secondslide.jpg'
 import  './styles.css'
 import Footer from './footer.js'
 

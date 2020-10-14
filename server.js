@@ -32,8 +32,6 @@ require("./config/passport.js")(passport);
 //Routes
 app.use("/api/users", users);
 
-
-
 // app.set('port', (5000 || process.env.PORT ));
 
 //For avoidong Heroku $PORT error

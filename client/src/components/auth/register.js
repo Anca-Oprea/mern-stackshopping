@@ -1,14 +1,9 @@
-import React, { Component } from 'react';
-
-import { Link, withRouter, history, isAuthenticated } from 'react-router-dom'
+import React from 'react';
+import { Link, withRouter} from 'react-router-dom'
 import { connect } from 'react-redux';
 import classnames from "classnames";
 import { registerUser } from '../../actions/authActions';
 import PropTypes from "prop-types";
-import authReducers from "../../reducers/authReducers"
-
-
-
 
 class Register extends React.Component {
 
@@ -21,14 +16,10 @@ class Register extends React.Component {
             email: "",
             password: "",
             password2: "",
-           
             errors: {},
-           
-
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
-      
     }
     componentDidMount() {
         //If logged in and user navigates lo Login page, should redirect them to dascboard
@@ -131,16 +122,11 @@ class Register extends React.Component {
                                     required
                                     onChange={this.handleChange} />
                                    {errors.email && (<div className="invalid-feedback">{errors.email}</div>)}
-                              
-
                             </div>
                             <div className="form-group">
-                            
                                 <input type="password"
-                                  
                                     placeholder="Password"
                                     name="password"
-                               
                                     value={this.state.password}
                                     className={classnames('form-control  form-control-lg', {
                                        'is-invalid': errors.password
@@ -150,12 +136,9 @@ class Register extends React.Component {
                                 {errors.password && (<div className="invalid-feedback">{errors.password}</div>)}
                             </div>
                             <div className="form-group">
-                            
                                 <input type="password"
-                                   
                                     placeholder="Confirm password"
                                     name="password2"
-                                  
                                     value={this.state.password2}
                                     className={classnames('form-control form-control-lg', {
                                         'is-invalid': errors.password2
@@ -164,25 +147,16 @@ class Register extends React.Component {
                                     onChange={this.handleChange} />
                                     {errors.password2 && (<div className="invalid-feedback">{errors.password2}</div>)}
                             </div>
-
-                            
-                 
                         <div className="form-group">
                     <button type="submit" className="btn btn-primary">
                         Register User
                     </button>
                 </div>
-                       
                     </form>
-                
-
             </div>
             </div>
-
         )
-
     }
-
 }
 Register.propTypes = {
     registerUser: PropTypes.func.isRequired,
@@ -193,8 +167,6 @@ const mapStateToProps = state => ({
     auth: state.auth,
     errors: state.errors
 });
-
-
 export default connect(
     mapStateToProps,
     { registerUser }

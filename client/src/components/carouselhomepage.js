@@ -1,11 +1,6 @@
-import React, { Component, useState } from "react";
-import { Carousel, CarouselItem, Col, Row,CarouselControl } from 'reactstrap'
-import Firstslide from './img/Firstslide.jpg'
-import Secondslide from './img/Secondslide.jpg'
-import Thirdslide from './img/Thirdslide.jpg'
-
+import React, { Component } from "react";
+import { Carousel, CarouselItem, Col, Row, CarouselControl } from 'reactstrap'
 import ButtonInternalLink from './buttonInternalLink'
-
 
 const styles = {
   sliderContent: {
@@ -13,7 +8,7 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column',
-    color:'white'
+    color: 'white'
   }
 }
 
@@ -27,7 +22,7 @@ const items = [
     btn: {
       content: 'Go to the collection',
       link: '/Men',
-    
+
     }
   },
   {
@@ -39,7 +34,6 @@ const items = [
     btn: {
       content: 'Cool collection',
       link: '/Women'
-
     }
   },
   {
@@ -51,7 +45,6 @@ const items = [
     btn: {
       content: 'Go to the collection',
       link: '/Men'
-
     }
   }
 ];
@@ -89,7 +82,6 @@ class CarouselHomepage extends Component {
 
   render() {
     const { activeIndex } = this.state;
-
     const slides = items.map(x => {
       return (
         <CarouselItem
@@ -97,20 +89,19 @@ class CarouselHomepage extends Component {
           onExited={this.onExited}
           key={x.src}
         >
-          <Row  style={{backgroundColor: '#072a48'}}>
+          <Row style={{ backgroundColor: '#072a48' }}>
             <Col md="6">
-              <img src={x.src} alt={x.altText} style={{width: '100%', maxHeight: '500px'}}/>
+              <img src={x.src} alt={x.altText} style={{ width: '100%', maxHeight: '500px' }} />
             </Col>
             <Col md="6" style={styles.sliderContent}>
               <h2>{x.title}</h2>
               <p>{x.subtitle}</p>
               <ButtonInternalLink
-              link= {x.btn.link}
-              content= {x.btn.content}
-              sizeBtn = 'lg'
-              lightOrDark={x.btn.lightOrDark}
+                link={x.btn.link}
+                content={x.btn.content}
+                sizeBtn='lg'
+                lightOrDark={x.btn.lightOrDark}
               />
-            
             </Col>
           </Row>
         </CarouselItem>
@@ -130,7 +121,6 @@ class CarouselHomepage extends Component {
     );
   }
 }
-
 
 export default CarouselHomepage;
 
